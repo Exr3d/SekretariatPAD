@@ -41,7 +41,7 @@
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
                                     <DataGridTextColumn Header="uPesel" Binding="{Binding Path=uPesel}"/>
-                                    <DataGridTemplateColumn Header="uZdjecie" IsReadOnly="True">
+                                    <DataGridTemplateColumn Header="uZdjecie" IsReadOnly="False">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Image Source="{Binding Path=uZdjecie}" />
@@ -70,12 +70,12 @@
                             <TextBlock>Imie Matki</TextBlock>
                             <TextBox></TextBox>
                             <TextBlock>Data urodzenia</TextBlock>
-                            <DatePicker></DatePicker>
+                            <DatePicker Name="uDataUrodzenia"></DatePicker>
                             <TextBlock>Pesel</TextBlock>
                             <TextBox></TextBox>
                             <TextBlock>Zdjecie</TextBlock>
-                            <TextBox></TextBox>
-                            <Button>Dodaj zdjecie</Button>
+                            <TextBox x:Name="uczenImage"></TextBox>
+                            <Button Click="uczenAddImage" >Dodaj zdjecie</Button>
                             <TextBlock>Płeć</TextBlock>
                             <TextBox></TextBox>
                             <TextBlock>Klasa</TextBlock>

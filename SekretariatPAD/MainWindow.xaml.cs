@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
 
 namespace SekretariatPAD
 {
@@ -24,7 +26,8 @@ namespace SekretariatPAD
         public MainWindow()
         {
             InitializeComponent();
-            
+            dgUczen.ItemsSource = uczniowie;
+
             uczniowie.Add(new Uczen()
             {
                 uImie = "Tymon2",
@@ -70,8 +73,9 @@ namespace SekretariatPAD
             public string uNazwiskoPanienskie { get; set; }
             public string uImieOjca { get; set; }
             public string uImieMatki { get; set; }
-            public string uDataUr { get; set; }
+            public DateTime uDataUr { get; set; }
             public string uPesel { get; set; }
+            public Uri uZdjecie { get; set; }
         }
 
         private void addUczen(object sender, RoutedEventArgs e)
@@ -79,29 +83,21 @@ namespace SekretariatPAD
 
             uczniowie.Add(new Uczen()
             {
-                uImie = uImieTB.Text
+                uImie = uImieTB.Text,
+                uDataUr = uDataUrodzenia.SelectedDate.Value.Date,
+                uZdjecie = new Uri("C:\\Users\\Tymon\\Desktop\\pngTest.png")
+
             });
-            uczniowie.Add(new Uczen()
-            {
-                uImie = "Tymon2",
-                uDrugieImie = "Jakub2"
-            });
-            dgUczen.ItemsSource = uczniowie;
             dgUczen.Items.Refresh();
 
 
         }
-        public List<Uczen> LadujUczen()
-        {
-            List<Uczen> uczniowie = new List<Uczen>();
-            uczniowie.Add(new Uczen()
-            {
-                uImie = "Tymon2",
-                uDrugieImie = "Jakub2"
-            });
 
-           
-            return uczniowie;
+        private void uczenAddImage(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                uczenImage.Text = openFileDialog.FileName;
         }
     }
 }
