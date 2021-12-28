@@ -1,0 +1,116 @@
+﻿<Window x:Class="SekretariatPAD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SekretariatPAD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+
+
+
+            <TabControl>
+                <TabItem Header="Uczen">
+                    <StackPanel Orientation="Vertical">
+
+                        <StackPanel Orientation="Horizontal">
+                            <DataGrid Name="dgUczen" AutoGenerateColumns="False" Grid.Column="0">
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn Header="uImie" Binding="{Binding Path=uImie}"/>
+                                    <DataGridTextColumn Header="uDrugieImie" Binding="{Binding Path=uDrugieImie}"/>
+                                    <DataGridTextColumn Header="uNazwisko" Binding="{Binding Path=uNazwisko}"/>
+                                    <DataGridTextColumn Header="uNazwiskoPanienskie" Binding="{Binding Path=uNazwiskoPanienskie}"/>
+                                    <DataGridTextColumn Header="uImieOjca" Binding="{Binding Path=uImieOjca}"/>
+                                    <DataGridTextColumn Header="uImieMatki" Binding="{Binding Path=uImieMatki}"/>
+                                    <DataGridTemplateColumn Header="uDataUr">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding Path=uDataUr}" BorderThickness="0" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="uPesel" Binding="{Binding Path=uPesel}"/>
+                                    <DataGridTemplateColumn Header="uZdjecie" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding Path=uZdjecie}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="uPlec" Binding="{Binding Path=uPlec}"/>
+                                    <DataGridTextColumn Header="uKlasa" Binding="{Binding Path=uKlasa}"/>
+                                    <DataGridTextColumn Header="uGrupa" Binding="{Binding Path=uGrupa}"/>
+
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0,50,0,0">
+                            <TextBox>Test</TextBox>
+                        </StackPanel>
+
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Nauczyciel">
+                    <StackPanel Orientation="Vertical">
+
+                        <StackPanel Orientation="Horizontal">
+                            <DataGrid Name="dgNauczyciel" AutoGenerateColumns="False" Grid.Column="0">
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn Header="nImie" Binding="{Binding Path=nImie}"/>
+                                    <DataGridTextColumn Header="nDrugieImie" Binding="{Binding Path=nDrugieImie}"/>
+                                    <DataGridTextColumn Header="nNazwisko" Binding="{Binding Path=nNazwisko}"/>
+                                    <DataGridTextColumn Header="nNazwiskoPanienskie" Binding="{Binding Path=nNazwiskoPanienskie}"/>
+                                    <DataGridTextColumn Header="nImieOjca" Binding="{Binding Path=nImieOjca}"/>
+                                    <DataGridTextColumn Header="nImieMatki" Binding="{Binding Path=nImieMatki}"/>
+                                    <DataGridTemplateColumn Header="nDataUr">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding Path=nDataUr}" BorderThickness="0" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="nPesel" Binding="{Binding Path=nPesel}"/>
+                                    <DataGridTemplateColumn Header="nZdjecie" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding Path=nZdjecie}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="nPlec" Binding="{Binding Path=nPlec}"/>
+                                    <DataGridTextColumn Header="nWychowawstwo" Binding="{Binding Path=nWychowawstwo}"/>
+                                    <DataGridTextColumn Header="nPrzedmiotyNauczane" Binding="{Binding Path=nPrzedmiotyNauczane}"/>
+                                    <DataGridTextColumn Header="nKlasaIloscGodzin" Binding="{Binding Path=nKlasaIloscGodzin}"/>
+                                    <DataGridTemplateColumn Header="nDataZatrudnienia">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding Path=nDataZatrudnienia}" BorderThickness="0" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0,50,0,0">
+                            <TextBox>Test</TextBox>
+                        </StackPanel>
+
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Pracownik">
+
+                </TabItem>
+            </TabControl>
+
+        </StackPanel>
+    </Grid>
+</Window>
