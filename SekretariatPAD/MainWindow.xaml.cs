@@ -24,5 +24,23 @@ namespace SekretariatPAD
         {
             InitializeComponent();
         }
+
+        private void goToUczen(object sender, RoutedEventArgs e)
+        {
+            tabUczen.IsSelected = true;
+            
+        }
+
+        private void goToNauczyciel(object sender, RoutedEventArgs e)
+        {
+            
+            tabNauczyciel.IsSelected = true;
+            
+        }
+
+        private void goToPracownik(object sender, RoutedEventArgs e)
+        {
+            tabPracownik.IsSelected = true;
+        }
     }
 }

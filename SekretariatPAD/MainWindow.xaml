@@ -6,13 +6,21 @@
         xmlns:local="clr-namespace:SekretariatPAD"
         mc:Ignorable="d"
         Title="Sekretariat" Height="800" Width="1200">
-    <Grid>
+    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Dane">
+                <MenuItem Header="_Uczen" Click="goToUczen"/>
+                <MenuItem Header="_Nauczyciel" Click="goToNauczyciel"/>
+                <MenuItem Header="_Pracownik" Click="goToPracownik"/>
+            </MenuItem>
+        </Menu>
         <StackPanel Orientation="Vertical">
 
 
 
             <TabControl>
-                <TabItem Header="Uczen">
+                <TabItem Header="Uczen" Name="tabUczen">
                     <StackPanel Orientation="Vertical">
 
                         <StackPanel Orientation="Horizontal">
@@ -81,7 +89,7 @@
                     </StackPanel>
                 </TabItem>
 
-                <TabItem Header="Nauczyciel">
+                <TabItem Header="Nauczyciel" Name="tabNauczyciel">
                     <StackPanel Orientation="Vertical">
 
                         <StackPanel Orientation="Horizontal">
@@ -160,7 +168,7 @@
                     </StackPanel>
                 </TabItem>
 
-                <TabItem Header="Pracownik">
+                <TabItem Header="Pracownik" Name="tabPracownik">
 
                     <StackPanel Orientation="Vertical">
 
@@ -242,5 +250,5 @@
             </TabControl>
 
         </StackPanel>
-    </Grid>
+    </DockPanel>
 </Window>
