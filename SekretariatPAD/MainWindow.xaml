@@ -27,7 +27,7 @@
                             <DataGrid Name="dgUczen" AutoGenerateColumns="False" Grid.Column="0">
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="uImie" Binding="{Binding Path=uImie}"/>
+                                    <DataGridTextColumn Header="uImie" Binding="{Binding Path=uImie}" IsReadOnly="True"/>
                                     <DataGridTextColumn Header="uDrugieImie" Binding="{Binding Path=uDrugieImie}"/>
                                     <DataGridTextColumn Header="uNazwisko" Binding="{Binding Path=uNazwisko}"/>
                                     <DataGridTextColumn Header="uNazwiskoPanienskie" Binding="{Binding Path=uNazwiskoPanienskie}"/>
@@ -57,8 +57,8 @@
                             </DataGrid>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="0,50,0,0">
-                            <TextBlock>Imie</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBlock >Imie</TextBlock>
+                            <TextBox x:Name="uImieTB"></TextBox>
                             <TextBlock>Drugie imie</TextBlock>
                             <TextBox></TextBox>
                             <TextBlock>Nazwisko</TextBlock>
@@ -82,6 +82,9 @@
                             <TextBox></TextBox>
                             <TextBlock>Grupa</TextBlock>
                             <TextBox></TextBox>
+
+                            <Button Click="addUczen">Dodaj ucznia</Button>
+                            
 
                             
                         </StackPanel>
