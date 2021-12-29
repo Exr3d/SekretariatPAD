@@ -280,7 +280,37 @@ namespace SekretariatPAD
         {
             string tempNeeded = searchuPesel.Text.ToLower().ToString();
 
-            var Zfiltrowane = uczniowie.Where(x => x.uImieMatki.ToLower().Contains(tempNeeded));
+            var Zfiltrowane = uczniowie.Where(x => x.uPesel.ToLower().Equals(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoPlci(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuPlec.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uPlec.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoKlasie(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuKlasa.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uKlasa.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoGrupie(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuGrupa.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uGrupa.ToLower().Contains(tempNeeded));
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();

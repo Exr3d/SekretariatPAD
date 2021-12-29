@@ -105,15 +105,15 @@
                             <StackPanel Orientation="Vertical" Width="200">
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Płci</TextBlock>
                                 <TextBox x:Name="searchuPlec"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoPlci">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Klasie</TextBlock>
                                 <TextBox x:Name="searchuKlasa"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoKlasie">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Grupie</TextBlock>
                                 <TextBox x:Name="searchuGrupa"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoGrupie">Filtruj</Button>
                             </StackPanel>
                             
                             
