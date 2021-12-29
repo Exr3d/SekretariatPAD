@@ -24,6 +24,7 @@ namespace SekretariatPAD
     {
         List<Uczen> uczniowie = new List<Uczen>();
         List<Empty> empty = new List<Empty>();
+        int raportNUMBER = 1;
         public MainWindow()
         {
             InitializeComponent();
@@ -206,6 +207,32 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" +raportNUMBER + ".txt";
+            if (!File.Exists(path))
+            {
+
+                string text = "";
+                for (int i = 0; i < dgUczen.Items.Count; i++)
+                {
+                    Uczen uczenTest = dgUczen.Items[i] as Uczen;
+                    text += (uczenTest.uImie + " " + uczenTest.uDrugieImie);
+
+                    if (i < dgUczen.Items.Count - 1)
+                        text += ", ";
+                }
+                
+
+                string result = string.Join(";",dgUczen.Items[0].ToString());
+              
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine(text);
+                }
+                
+            }
+
         }
 
         private void searchUczenPoDrugimImieniu(object sender, RoutedEventArgs e)
