@@ -76,6 +76,9 @@ namespace SekretariatPAD
             public DateTime uDataUr { get; set; }
             public string uPesel { get; set; }
             public Uri uZdjecie { get; set; }
+            public string uPlec { get; set; }
+            public string uKlasa { get; set; }
+            public string uGrupa { get; set; }
         }
 
         private void addUczen(object sender, RoutedEventArgs e)
@@ -84,9 +87,17 @@ namespace SekretariatPAD
             uczniowie.Add(new Uczen()
             {
                 uImie = uImieTB.Text,
+                uDrugieImie = uDrugieImieTB.Text,
+                uNazwisko = uNazwiskoTB.Text,
+                uNazwiskoPanienskie = uNazwiskoTB.Text,
+                uImieOjca = uImieMatkiTB.Text,
+                uImieMatki = uImieMatkiTB.Text,
                 uDataUr = uDataUrodzenia.SelectedDate.Value.Date,
-                uZdjecie = new Uri(uczenImage.Text)
-
+                uPesel = uPeselTB.Text,
+                uZdjecie = new Uri(uczenImage.Text),
+                uPlec = uPlecTB.Text,
+                uKlasa = uKlasaTB.Text,
+                uGrupa = uGrupaTB.Text
             });
             dgUczen.Items.Refresh();
 

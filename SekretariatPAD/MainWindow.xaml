@@ -62,28 +62,28 @@
                             <TextBlock >Imie</TextBlock>
                             <TextBox x:Name="uImieTB"></TextBox>
                             <TextBlock>Drugie imie</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uDrugieImieTB"></TextBox>
                             <TextBlock>Nazwisko</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uNazwiskoTB"></TextBox>
                             <TextBlock>Nazwisko panieńskie</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uNazwiskoPanienskieTB"></TextBox>
                             <TextBlock>Imie Ojca</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uImieOjcaTB"></TextBox>
                             <TextBlock>Imie Matki</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uImieMatkiTB"></TextBox>
                             <TextBlock>Data urodzenia</TextBlock>
                             <DatePicker Name="uDataUrodzenia"></DatePicker>
                             <TextBlock>Pesel</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uPeselTB"></TextBox>
                             <TextBlock>Zdjecie</TextBlock>
                             <TextBox x:Name="uczenImage"></TextBox>
                             <Button Click="uczenAddImage" >Dodaj zdjecie</Button>
                             <TextBlock>Płeć</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uPlecTB"></TextBox>
                             <TextBlock>Klasa</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uKlasaTB"></TextBox>
                             <TextBlock>Grupa</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="uGrupaTB"></TextBox>
 
                             <Button Click="addUczen">Dodaj ucznia</Button>
                             
