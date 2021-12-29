@@ -6,13 +6,22 @@
         xmlns:local="clr-namespace:SekretariatPAD"
         mc:Ignorable="d"
         Title="Sekretariat" Height="Auto" Width="Auto" WindowState="Maximized">
-    
+
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Dane">
                 <MenuItem Header="_Uczen" Click="goToUczen"/>
                 <MenuItem Header="_Nauczyciel" Click="goToNauczyciel"/>
                 <MenuItem Header="_Pracownik" Click="goToPracownik"/>
+            </MenuItem>
+            <MenuItem Header="_Opcje">
+                <MenuItem Header="_Exit" Click="ExitClick"/>
+                <MenuItem Header="_Autor" Click="AuthorClick" />
+            </MenuItem>
+            <MenuItem Header="_Czyszczenie">
+                <MenuItem Header="Wyczysc uczen" Click="ShortcutMenuClickUczen"/>
+                <MenuItem Header="Wyczysc nauczyciel" Click="ShortcutMenuClickNauczyciel"/>
+                <MenuItem Header="Wyczysc pracownik" Click="ShortcutMenuClickPracownik"/>
             </MenuItem>
         </Menu>
         <StackPanel Orientation="Vertical">
@@ -26,36 +35,36 @@
                         <StackPanel Orientation="Horizontal">
                             <ScrollViewer Height="350">
                                 <DataGrid Name="dgUczen" AutoGenerateColumns="False" Grid.Column="0" >
-                                <DataGrid.Columns>
+                                    <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="uImie" Binding="{Binding Path=uImie}" IsReadOnly="True" />
-                                    <DataGridTextColumn Header="uDrugieImie" Binding="{Binding Path=uDrugieImie}" />
-                                    <DataGridTextColumn Header="uNazwisko" Binding="{Binding Path=uNazwisko}" />
-                                    <DataGridTextColumn Header="uNazwiskoPanienskie" Binding="{Binding Path=uNazwiskoPanienskie}" />
-                                    <DataGridTextColumn Header="uImieOjca" Binding="{Binding Path=uImieOjca}" />
-                                    <DataGridTextColumn Header="uImieMatki" Binding="{Binding Path=uImieMatki}" />
-                                    <DataGridTemplateColumn Header="uDataUr">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <DatePicker SelectedDate="{Binding Path=uDataUr}" BorderThickness="0" />
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="uPesel" Binding="{Binding Path=uPesel}" />
-                                    <DataGridTemplateColumn Header="uZdjecie" IsReadOnly="False" >
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Image Source="{Binding Path=uZdjecie}" />
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="uPlec" Binding="{Binding Path=uPlec}" />
-                                    <DataGridTextColumn Header="uKlasa" Binding="{Binding Path=uKlasa}" />
-                                    <DataGridTextColumn Header="uGrupa" Binding="{Binding Path=uGrupa}" />
+                                        <DataGridTextColumn Header="uImie" Binding="{Binding Path=uImie}" IsReadOnly="True" />
+                                        <DataGridTextColumn Header="uDrugieImie" Binding="{Binding Path=uDrugieImie}" />
+                                        <DataGridTextColumn Header="uNazwisko" Binding="{Binding Path=uNazwisko}" />
+                                        <DataGridTextColumn Header="uNazwiskoPanienskie" Binding="{Binding Path=uNazwiskoPanienskie}" />
+                                        <DataGridTextColumn Header="uImieOjca" Binding="{Binding Path=uImieOjca}" />
+                                        <DataGridTextColumn Header="uImieMatki" Binding="{Binding Path=uImieMatki}" />
+                                        <DataGridTemplateColumn Header="uDataUr">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <DatePicker SelectedDate="{Binding Path=uDataUr}" BorderThickness="0" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="uPesel" Binding="{Binding Path=uPesel}" />
+                                        <DataGridTemplateColumn Header="uZdjecie" IsReadOnly="False" >
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Image Source="{Binding Path=uZdjecie}" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="uPlec" Binding="{Binding Path=uPlec}" />
+                                        <DataGridTextColumn Header="uKlasa" Binding="{Binding Path=uKlasa}" />
+                                        <DataGridTextColumn Header="uGrupa" Binding="{Binding Path=uGrupa}" />
 
 
-                                </DataGrid.Columns>
-                            </DataGrid>
+                                    </DataGrid.Columns>
+                                </DataGrid>
                             </ScrollViewer>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="0,50,0,0" >
@@ -87,9 +96,15 @@
 
                             <Button Click="addUczen">Dodaj ucznia</Button>
                             <Button Click="addDane" Margin="0,20,0,0">Dodaj dane z pliku TXT</Button>
+
+                            <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu</TextBlock>
+                            <TextBox x:Name="searchuImie"></TextBox>
+                            <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj po imieniu</Button>
+                            
                             
 
-                            
+
+
                         </StackPanel>
 
                     </StackPanel>
@@ -251,7 +266,7 @@
                         </StackPanel>
 
                     </StackPanel>
-                    
+
                 </TabItem>
             </TabControl>
 

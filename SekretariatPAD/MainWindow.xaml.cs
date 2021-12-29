@@ -23,6 +23,7 @@ namespace SekretariatPAD
     public partial class MainWindow : Window
     {
         List<Uczen> uczniowie = new List<Uczen>();
+        List<Empty> empty = new List<Empty>();
         public MainWindow()
         {
             InitializeComponent();
@@ -48,6 +49,21 @@ namespace SekretariatPAD
         }
 
         public class Uczen
+        {
+            public string uImie { get; set; }
+            public string uDrugieImie { get; set; }
+            public string uNazwisko { get; set; }
+            public string uNazwiskoPanienskie { get; set; }
+            public string uImieOjca { get; set; }
+            public string uImieMatki { get; set; }
+            public DateTime uDataUr { get; set; }
+            public string uPesel { get; set; }
+            public Uri uZdjecie { get; set; }
+            public string uPlec { get; set; }
+            public string uKlasa { get; set; }
+            public string uGrupa { get; set; }
+        }
+        public class Empty
         {
             public string uImie { get; set; }
             public string uDrugieImie { get; set; }
@@ -105,42 +121,93 @@ namespace SekretariatPAD
                 {
                     lineCount++;
                 }
-                uGrupaTB.Text = lineCount.ToString();
-                if(lineCount%11 == 0)
-                { 
-                while (sr.EndOfStream != true)
+               
+                if (lineCount % 11 == 0)
                 {
-                  
-
-                    
-                var x = 0;
-                string[] tablicaLini = new string[11];
-                while (x<11)
-                {
-                    string linia = sr.ReadLine().ToString();
-                    tablicaLini[x] = linia;
-                    x++;
-                }
-                uczniowie.Add(new Uczen()
+                    while (sr.EndOfStream != true)
                     {
-                        uImie = tablicaLini[0],
-                        uDrugieImie = tablicaLini[1],
-                        uNazwisko = tablicaLini[2],
-                        uNazwiskoPanienskie = tablicaLini[3],
-                        uImieOjca = tablicaLini[4],
-                        uImieMatki = tablicaLini[5],
-                        uDataUr = DateTime.Parse(tablicaLini[6]),
-                        uPesel = tablicaLini[7],
-                        uPlec = tablicaLini[8],
-                        uKlasa = tablicaLini[9],
-                        uGrupa = tablicaLini[10]
-                });
-                
 
-                dgUczen.Items.Refresh();
+
+
+                        var x = 0;
+                        string[] tablicaLini = new string[11];
+                        while (x < 11)
+                        {
+                            string linia = sr.ReadLine().ToString();
+                            tablicaLini[x] = linia;
+                            x++;
+                        }
+                        uczniowie.Add(new Uczen()
+                        {
+                            uImie = tablicaLini[0],
+                            uDrugieImie = tablicaLini[1],
+                            uNazwisko = tablicaLini[2],
+                            uNazwiskoPanienskie = tablicaLini[3],
+                            uImieOjca = tablicaLini[4],
+                            uImieMatki = tablicaLini[5],
+                            uDataUr = DateTime.Parse(tablicaLini[6]),
+                            uPesel = tablicaLini[7],
+                            uPlec = tablicaLini[8],
+                            uKlasa = tablicaLini[9],
+                            uGrupa = tablicaLini[10]
+                        });
+
+
+
+                        dgUczen.Items.Refresh();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Sprawdź poprawność dodawanego pliku");
+                }
             }
+        }
+
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Close Application?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            {}
+            else
+            {
+                Close();
+            }
+            
+        }
+
+        private void AuthorClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Author: Tymon Wojtanowski");
+        }
+
+        private void ShortcutMenuClickUczen(object sender, RoutedEventArgs e)
+        {
+            dgUczen.ItemsSource = null;
+            uczniowie.Clear();
+            dgUczen.ItemsSource = uczniowie;
+        }
+
+        private void ShortcutMenuClickNauczyciel(object sender, RoutedEventArgs e)
+        {
+            dgNauczyciel.ItemsSource = null;
+        }
+
+        private void ShortcutMenuClickPracownik(object sender, RoutedEventArgs e)
+        {
+            dgPracownik.ItemsSource = null;
+        }
+
+        private void searchUczenPoImieniu(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuImie.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uImie.ToLower().Contains(tempNeeded));
+
+
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+
+
         }
     }
 }
