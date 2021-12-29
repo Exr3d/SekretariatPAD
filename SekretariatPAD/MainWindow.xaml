@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SekretariatPAD"
         mc:Ignorable="d"
-        Title="Sekretariat" Height="800" Width="1200">
+        Title="Sekretariat" Height="Auto" Width="Auto" WindowState="Maximized">
     
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -24,15 +24,16 @@
                     <StackPanel Orientation="Vertical">
 
                         <StackPanel Orientation="Horizontal">
-                            <DataGrid Name="dgUczen" AutoGenerateColumns="False" Grid.Column="0">
+                            <ScrollViewer Height="350">
+                                <DataGrid Name="dgUczen" AutoGenerateColumns="False" Grid.Column="0" >
                                 <DataGrid.Columns>
 
-                                    <DataGridTextColumn Header="uImie" Binding="{Binding Path=uImie}" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="uDrugieImie" Binding="{Binding Path=uDrugieImie}"/>
-                                    <DataGridTextColumn Header="uNazwisko" Binding="{Binding Path=uNazwisko}"/>
-                                    <DataGridTextColumn Header="uNazwiskoPanienskie" Binding="{Binding Path=uNazwiskoPanienskie}"/>
-                                    <DataGridTextColumn Header="uImieOjca" Binding="{Binding Path=uImieOjca}"/>
-                                    <DataGridTextColumn Header="uImieMatki" Binding="{Binding Path=uImieMatki}"/>
+                                    <DataGridTextColumn Header="uImie" Binding="{Binding Path=uImie}" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="uDrugieImie" Binding="{Binding Path=uDrugieImie}" />
+                                    <DataGridTextColumn Header="uNazwisko" Binding="{Binding Path=uNazwisko}" />
+                                    <DataGridTextColumn Header="uNazwiskoPanienskie" Binding="{Binding Path=uNazwiskoPanienskie}" />
+                                    <DataGridTextColumn Header="uImieOjca" Binding="{Binding Path=uImieOjca}" />
+                                    <DataGridTextColumn Header="uImieMatki" Binding="{Binding Path=uImieMatki}" />
                                     <DataGridTemplateColumn Header="uDataUr">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
@@ -40,23 +41,24 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="uPesel" Binding="{Binding Path=uPesel}"/>
-                                    <DataGridTemplateColumn Header="uZdjecie" IsReadOnly="False">
+                                    <DataGridTextColumn Header="uPesel" Binding="{Binding Path=uPesel}" />
+                                    <DataGridTemplateColumn Header="uZdjecie" IsReadOnly="False" >
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Image Source="{Binding Path=uZdjecie}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="uPlec" Binding="{Binding Path=uPlec}"/>
-                                    <DataGridTextColumn Header="uKlasa" Binding="{Binding Path=uKlasa}"/>
-                                    <DataGridTextColumn Header="uGrupa" Binding="{Binding Path=uGrupa}"/>
+                                    <DataGridTextColumn Header="uPlec" Binding="{Binding Path=uPlec}" />
+                                    <DataGridTextColumn Header="uKlasa" Binding="{Binding Path=uKlasa}" />
+                                    <DataGridTextColumn Header="uGrupa" Binding="{Binding Path=uGrupa}" />
 
 
                                 </DataGrid.Columns>
                             </DataGrid>
+                            </ScrollViewer>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="0,50,0,0">
+                        <StackPanel Orientation="Vertical" Margin="0,50,0,0" >
                             <TextBlock >Imie</TextBlock>
                             <TextBox x:Name="uImieTB"></TextBox>
                             <TextBlock>Drugie imie</TextBlock>

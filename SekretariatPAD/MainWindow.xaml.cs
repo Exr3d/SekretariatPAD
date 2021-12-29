@@ -85,7 +85,7 @@ namespace SekretariatPAD
             {
                 uImie = uImieTB.Text,
                 uDataUr = uDataUrodzenia.SelectedDate.Value.Date,
-                uZdjecie = new Uri("C:\\Users\\Tymon\\Desktop\\pngTest.png")
+                uZdjecie = new Uri(uczenImage.Text)
 
             });
             dgUczen.Items.Refresh();
