@@ -110,5 +110,52 @@ namespace SekretariatPAD
             if (openFileDialog.ShowDialog() == true)
                 uczenImage.Text = openFileDialog.FileName;
         }
+
+        private void addDane(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if(openFileDialog.ShowDialog() == true)
+            {
+                
+                    
+                StreamReader sr = new StreamReader(openFileDialog.FileName.ToString());
+                var x = 11;
+                string[] tablicaLini = new string[11];
+                while (x<11)
+                {
+                    
+                    string linia = sr.ReadLine();
+                    tablicaLini[x] = linia;
+                    x++;
+                    uImieOjcaTB.Text += linia + "\n";
+
+                }
+               
+               // DateTime data = DateTime.Parse(tablicaLini[6]);
+                /*uczniowie.Add(new Uczen()
+                    {
+                        uImie = tablicaLini[0],
+                        uDrugieImie = tablicaLini[1],
+                        uNazwisko = tablicaLini[2],
+                        uNazwiskoPanienskie = tablicaLini[3],
+                        uImieOjca = tablicaLini[4],
+                        uImieMatki = tablicaLini[5],
+                        uDataUr = DateTime.Parse(tablicaLini[6]),
+                        uPesel = tablicaLini[7],
+                        uPlec = tablicaLini[8],
+                        uKlasa = tablicaLini[9],
+                        uGrupa = tablicaLini[10]
+                });
+                
+                    dgUczen.Items.Refresh();
+                    */
+                
+                    
+                
+                    
+                
+                
+            }
+        }
     }
 }

@@ -86,6 +86,7 @@
                             <TextBox x:Name="uGrupaTB"></TextBox>
 
                             <Button Click="addUczen">Dodaj ucznia</Button>
+                            <Button Click="addDane" Margin="0,20,0,0">Dodaj dane z pliku TXT</Button>
                             
 
                             
