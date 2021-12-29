@@ -156,6 +156,7 @@ namespace SekretariatPAD
 
                         dgUczen.Items.Refresh();
                     }
+                    dgUczen.Items.Refresh();
                 }
                 else
                 {
@@ -202,12 +203,87 @@ namespace SekretariatPAD
             string tempNeeded = searchuImie.Text.ToLower().ToString();
 
             var Zfiltrowane = uczniowie.Where(x => x.uImie.ToLower().Contains(tempNeeded));
-
-
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
 
+        private void searchUczenPoDrugimImieniu(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuDrugieImie.Text.ToLower().ToString();
 
+            var Zfiltrowane = uczniowie.Where(x => x.uDrugieImie.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoNazwisku(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuNazwisko.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uNazwisko.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoNazwiskuPanienskim(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuNazwiskoPanienskie.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uNazwiskoPanienskie.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoImieniuOjca(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuImieOjca.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uImieOjca.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoImieniuMatki(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuImieMatki.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uImieMatki.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+        }
+
+        private void searchUczenPoDacieUr(object sender, RoutedEventArgs e)
+        {
+            if(searchuDataUr.Text != "")
+            {
+            DateTime tempNeeded = DateTime.Parse(searchuDataUr.Text);
+
+            var Zfiltrowane = uczniowie.Where(x => x.uDataUr.Equals(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
+            }
+            else
+            {
+                dgUczen.ItemsSource = uczniowie;
+            }
+            
+        }
+
+        private void searchUczenPoPeselu(object sender, RoutedEventArgs e)
+        {
+            string tempNeeded = searchuPesel.Text.ToLower().ToString();
+
+            var Zfiltrowane = uczniowie.Where(x => x.uImieMatki.ToLower().Contains(tempNeeded));
+            dgUczen.ItemsSource = empty;
+            dgUczen.ItemsSource = Zfiltrowane;
+            dgUczen.Items.Refresh();
         }
     }
 }

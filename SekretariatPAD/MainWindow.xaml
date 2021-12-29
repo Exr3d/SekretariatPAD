@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SekretariatPAD"
         mc:Ignorable="d"
-        Title="Sekretariat" Height="Auto" Width="Auto" WindowState="Maximized">
+        Title="Sekretariat" Height="Auto" Width="1400" WindowState="Maximized">
 
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -66,6 +66,57 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </ScrollViewer>
+                            
+                            <StackPanel Orientation="Vertical" Width="200">
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu</TextBlock>
+                                <TextBox x:Name="searchuImie"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Drugim Imieniu</TextBlock>
+                                <TextBox x:Name="searchuDrugieImie"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoDrugimImieniu">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Nazwisku</TextBlock>
+                                <TextBox x:Name="searchuNazwisko"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoNazwisku">Filtruj</Button>
+                                
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po nazwisku panieńskim</TextBlock>
+                                <TextBox x:Name="searchuNazwiskoPanienskie"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoNazwiskuPanienskim">Filtruj</Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Width="200">
+                                
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu ojca</TextBlock>
+                                <TextBox x:Name="searchuImieOjca"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniuOjca">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu matki</TextBlock>
+                                <TextBox x:Name="searchuImieMatki"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniuMatki">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po dacie urodzenia</TextBlock>
+                                <TextBox x:Name="searchuDataUr"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoDacieUr">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Peselu</TextBlock>
+                                <TextBox x:Name="searchuPesel"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoPeselu">Filtruj</Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Width="200">
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Płci</TextBlock>
+                                <TextBox x:Name="searchuPlec"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Klasie</TextBlock>
+                                <TextBox x:Name="searchuKlasa"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Grupie</TextBlock>
+                                <TextBox x:Name="searchuGrupa"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+                            </StackPanel>
+                            
+                            
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="0,50,0,0" >
                             <TextBlock >Imie</TextBlock>
@@ -97,9 +148,7 @@
                             <Button Click="addUczen">Dodaj ucznia</Button>
                             <Button Click="addDane" Margin="0,20,0,0">Dodaj dane z pliku TXT</Button>
 
-                            <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu</TextBlock>
-                            <TextBox x:Name="searchuImie"></TextBox>
-                            <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj po imieniu</Button>
+                            
                             
                             
 
