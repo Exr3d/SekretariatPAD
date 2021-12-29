@@ -116,12 +116,18 @@ namespace SekretariatPAD
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if(openFileDialog.ShowDialog() == true)
             {
+
+                
                 
                     
                 StreamReader sr = new StreamReader(openFileDialog.FileName.ToString());
+                while(sr.EndOfStream != true)
+                {
+
+                
                 var x = 0;
                 string[] tablicaLini = new string[11];
-                while (x < 11)
+                while (x<11)
                 {
                     string linia = sr.ReadLine().ToString();
                     //uGrupaTB.Text += linia + "\n";
@@ -131,9 +137,6 @@ namespace SekretariatPAD
                 }
                 
 
-                sr.Close();
-               
-               
                 uczniowie.Add(new Uczen()
                     {
                         uImie = tablicaLini[0],
@@ -148,8 +151,9 @@ namespace SekretariatPAD
                         uKlasa = tablicaLini[9],
                         uGrupa = tablicaLini[10]
                 });
-                
-                    dgUczen.Items.Refresh();
+                }
+
+                dgUczen.Items.Refresh();
                     
                 
                     
