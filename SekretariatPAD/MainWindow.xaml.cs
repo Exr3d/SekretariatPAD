@@ -119,20 +119,22 @@ namespace SekretariatPAD
                 
                     
                 StreamReader sr = new StreamReader(openFileDialog.FileName.ToString());
-                var x = 11;
+                var x = 0;
                 string[] tablicaLini = new string[11];
-                while (x<11)
+                while (x < 11)
                 {
-                    
-                    string linia = sr.ReadLine();
+                    string linia = sr.ReadLine().ToString();
+                    //uGrupaTB.Text += linia + "\n";
                     tablicaLini[x] = linia;
                     x++;
-                    uImieOjcaTB.Text += linia + "\n";
 
                 }
+                
+
+                sr.Close();
                
-               // DateTime data = DateTime.Parse(tablicaLini[6]);
-                /*uczniowie.Add(new Uczen()
+               
+                uczniowie.Add(new Uczen()
                     {
                         uImie = tablicaLini[0],
                         uDrugieImie = tablicaLini[1],
@@ -148,7 +150,7 @@ namespace SekretariatPAD
                 });
                 
                     dgUczen.Items.Refresh();
-                    */
+                    
                 
                     
                 
