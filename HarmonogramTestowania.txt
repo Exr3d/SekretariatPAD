@@ -1,0 +1,74 @@
+16 Grudzień 2021:
+        - Stworzenie projektu
+        - Planowanie projektu
+        - Tworzenie początkowego GUI
+        
+16 -> 27 Grudzień 2021:
+        - Research i dalsze planowanie
+        
+28 Grudzień 2021:
+        - Dodawanie szablonów do wprowadzania danych przez użytkownika
+        - Stworzenie menu (przechodzenie do poszczególnych zakładek)
+        - Dodawanie rekordu (bez zdjecia) + testowanie
+        - Dodawanie rekordu (ze zdjeciem) + testowanie
+        
+29 Grudzień 2021:
+        - Praca z zakładką 'Uczen'
+        - Utworzenie scrollowania sporych ilości danych + testowanie
+        - Tworzenie i testowanie w pełni działającej opcji dodania ucznia
+        - próby stworzenia dodania rekordów z pliku txt (pierwsze próby -> niedziałające)
+        - Testowanie i poprawki dodania rekordów z pliku txt (pojedyncze linie)
+        - Dodanie opcji czytania wielu linii z pliku txt w celu dodania danych (Uczeń)
+        - Dodanie walidacji pliku txt, tak aby zgadzała się ilość danych potrzebnych do dodania
+        - testowanie 
+        - Próby stworzenia filtrowania danych (po imieniu)
+        - Próby stworzenia filtrowania danych (po połowie danych)
+        - Testowanie i naprawa błędów w filtrowaniu i wyszukiwaniu danych (Uczeń)
+        
+30 Grudzień 2021:
+        - Pierwsze próby tworzenia raportów z wyszukiwań danych
+        - Naprawienie opcji stworzenia raportu exportowanego do pliku txt
+        - Dodanie do raportu daty, słowa kluczowego na podstawie którego był filtrowany
+        - Opcja stworzenia inkrementowanych raportów (jeśli istnieje np raport1 tworzony jest raport2)
+        - Koniec zakładki Uczeń
+        - Testy zakładki uczeń
+        - Implementowanie rozwiązań do zakładki Nauczyciel + GUI
+        - Dodawanie nowego nauczyciela (przycisk, recznie wprowadzane dane)
+        - Dodawanie nauczycieli z pliku txt
+        - Testowanie funkcjonalnosci filtrowania danych nauczyciele
+        - dodanie filtrowania + raportow (Nauczyciel)
+        - zmiana na automatyczne pobieranie sciezki pulpitu do zapisu raportu
+        - Implementowanie reszty rozwiązań z ucznia->nauczyciela
+        - Tworzenie gui - Pracownik
+        - Implementowanie rozwiązań do zakładki Pracownik
+        - tworzenie datagridu i klas - Pracownik
+        - dodawanie reczne - Pracownik
+        - dodawanie z danych z pliku - Pracownik
+        - poczatek tworzenia filtrowania i raportow - Pracownik
+        - testowanie filtrowania i raportow - Pracownik
+        - testowanie filtrowanie i raport pracownik (skonczone + naprawa bledow i testowanie)
+        - aktualizowanie menu (pomoc, wersja itp.)
+        - Testowanie koncowe aplikacji
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
