@@ -686,7 +686,57 @@ namespace SekretariatPAD
 
         private void addDaneNauczyciel(object sender, RoutedEventArgs e)
         {
+            int lineCount = 0;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                StreamReader sr = new StreamReader(openFileDialog.FileName.ToString());
+                StreamReader srLineCount = new StreamReader(openFileDialog.FileName.ToString());
+                while (srLineCount.ReadLine() != null)
+                {
+                    lineCount++;
+                }
 
+                if (lineCount % 13 == 0)
+                {
+                    while (sr.EndOfStream != true)
+                    {
+
+
+
+                        var x = 0;
+                        string[] tablicaLini = new string[13];
+                        while (x < 13)
+                        {
+                            string linia = sr.ReadLine().ToString();
+                            tablicaLini[x] = linia;
+                            x++;
+                        }
+                        nauczyciele.Add(new Nauczyciel()
+                        {
+                            nImie = tablicaLini[0],
+                            nDrugieImie = tablicaLini[1],
+                            nNazwisko = tablicaLini[2],
+                            nNazwiskoPanienskie = tablicaLini[3],
+                            nImieOjca = tablicaLini[4],
+                            nImieMatki = tablicaLini[5],
+                            nDataUr = DateTime.Parse(tablicaLini[6]),
+                            nPesel = tablicaLini[7],
+                            nPlec = tablicaLini[8],
+                            nWychowawstwo = tablicaLini[9],
+                            nPrzedmiotyNauczane = tablicaLini[10],
+                            nKlasaIloscGodzin = tablicaLini[11],
+                            nDataZatr = DateTime.Parse(tablicaLini[12])
+                        });
+                        dgNauczyciel.Items.Refresh();
+                    }
+                    dgNauczyciel.Items.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Sprawdź poprawność dodawanego pliku");
+                }
+            }
         }
 
         private void addNauczyciel(object sender, RoutedEventArgs e)
@@ -706,7 +756,7 @@ namespace SekretariatPAD
                 nWychowawstwo = nWychowawstwoTB.Text,
                 nPrzedmiotyNauczane = nPrzedmiotyNauczaneTB.Text,
                 nKlasaIloscGodzin = nKlasyIloscGodzinTB.Text,
-                nDataZatr = nDataZatrTB.SelectedDate.Value.Date
+                nDataZatr = nDataZatrTB.SelectedDate.Value.Date,
             });
             dgNauczyciel.Items.Refresh();
         }

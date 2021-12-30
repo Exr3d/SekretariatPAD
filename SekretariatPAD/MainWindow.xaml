@@ -118,7 +118,7 @@
                             
                             
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="0,50,0,0" >
+                        <StackPanel Orientation="Vertical" Margin="0,5,0,0" >
                             <TextBlock >Imie</TextBlock>
                             <TextBox x:Name="uImieTB"></TextBox>
                             <TextBlock>Drugie imie</TextBlock>
@@ -195,7 +195,7 @@
                                     <DataGridTemplateColumn Header="nDataZatrudnienia">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <DatePicker SelectedDate="{Binding Path=nDataZatrudnienia}" BorderThickness="0" />
+                                                <DatePicker SelectedDate="{Binding Path=nDataZatr}" BorderThickness="0" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -262,7 +262,7 @@
                             </StackPanel>
                         </StackPanel>
                         
-                        <StackPanel Orientation="Vertical" Margin="0,50,0,0">
+                        <StackPanel Orientation="Vertical" Margin="0,5,0,0">
                             <TextBlock>Imie</TextBlock>
                             <TextBox x:Name="nImieTB"></TextBox>
                             <TextBlock>Drugie imie</TextBlock>
