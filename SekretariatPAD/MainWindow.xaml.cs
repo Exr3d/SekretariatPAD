@@ -1554,7 +1554,50 @@ namespace SekretariatPAD
 
         private void searchPracownikPoImieniu(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpImie.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pImie.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoDrugimImieniu(object sender, RoutedEventArgs e)
