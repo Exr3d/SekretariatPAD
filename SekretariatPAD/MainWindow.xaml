@@ -305,7 +305,8 @@
                     <StackPanel Orientation="Vertical">
 
                         <StackPanel Orientation="Horizontal">
-                            <DataGrid Name="dgPracownik" AutoGenerateColumns="False" Grid.Column="0">
+                            <ScrollViewer Height="350">
+                                <DataGrid Name="dgPracownik" AutoGenerateColumns="False" Grid.Column="0">
                                 <DataGrid.Columns>
 
                                     <DataGridTextColumn Header="pImie" Binding="{Binding Path=pImie}"/>
@@ -335,7 +336,7 @@
                                     <DataGridTemplateColumn Header="pDataZatrudnienia">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <DatePicker SelectedDate="{Binding Path=pDataZatrudnienia}" BorderThickness="0" />
+                                                <DatePicker SelectedDate="{Binding Path=pDataZatr}" BorderThickness="0" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -343,8 +344,64 @@
 
                                 </DataGrid.Columns>
                             </DataGrid>
+                            </ScrollViewer>
+                            <StackPanel Orientation="Vertical" Width="200">
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu</TextBlock>
+                                <TextBox x:Name="searchpImie"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniu">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Drugim Imieniu</TextBlock>
+                                <TextBox x:Name="searchpDrugieImie"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoDrugimImieniu">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Nazwisku</TextBlock>
+                                <TextBox x:Name="searchpNazwisko"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoNazwisku">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po nazwisku panieńskim</TextBlock>
+                                <TextBox x:Name="searchpNazwiskoPanienskie"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoNazwiskuPanienskim">Filtruj</Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Width="200">
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu ojca</TextBlock>
+                                <TextBox x:Name="searchpImieOjca"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuOjca">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu matki</TextBlock>
+                                <TextBox x:Name="searchpImieMatki"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuMatki">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po dacie urodzenia</TextBlock>
+                                <TextBox x:Name="searchpDataUr"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoDacieUr">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Peselu</TextBlock>
+                                <TextBox x:Name="searchpPesel"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoPeselu">Filtruj</Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Width="200">
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Plci</TextBlock>
+                                <TextBox x:Name="searchpPlec"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuOjca">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Etacie</TextBlock>
+                                <TextBox x:Name="searchpEtat"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuMatki">Filtruj</Button>
+
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po opisie stanowiska</TextBlock>
+                                <TextBox x:Name="searchpStanowiskoOpis"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuMatki">Filtruj</Button>
+                                
+                                <TextBlock Margin="0,20,0,0">Wyszukaj po Dacie zatrudnienia</TextBlock>
+                                <TextBox x:Name="searchpDataZatr"></TextBox>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuMatki">Filtruj</Button>
+                            </StackPanel>
+                            
+                            
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="0,50,0,0">
+                        <StackPanel Orientation="Vertical" Margin="0,10,0,0">
                             <TextBlock>Imie</TextBlock>
                             <TextBox></TextBox>
                             <TextBlock>Drugie imie</TextBlock>

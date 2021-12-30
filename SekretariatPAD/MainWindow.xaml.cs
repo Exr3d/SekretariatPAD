@@ -28,6 +28,9 @@ namespace SekretariatPAD
         List<Nauczyciel> nauczyciele = new List<Nauczyciel>();
         List<EmptyNauczyciel> emptyNauczyciele = new List<EmptyNauczyciel>();
 
+        List<Pracownik> pracownicy = new List<Pracownik>();
+        List<EmptyPracownik> emptyPracownicy = new List<EmptyPracownik>();
+
         
         
 
@@ -121,6 +124,38 @@ namespace SekretariatPAD
             public string nPrzedmiotyNauczane { get; set; }
             public string nKlasaIloscGodzin { get; set; }
             public DateTime nDataZatr { get; set; }
+        }
+        public class Pracownik
+        {
+            public string pImie { get; set; }
+            public string pDrugieImie { get; set; }
+            public string pNazwisko { get; set; }
+            public string pNazwiskoPanienskie { get; set; }
+            public string pImieOjca { get; set; }
+            public string pImieMatki { get; set; }
+            public DateTime pDataUr { get; set; }
+            public string pPesel { get; set; }
+            public Uri pZdjecie { get; set; }
+            public string pPlec { get; set; }
+            public string pEtat { get; set; }
+            public string pStanowiskoOpis { get; set; }
+            public string pDataZatr { get; set; }
+        }
+        public class EmptyPracownik
+        {
+            public string pImie { get; set; }
+            public string pDrugieImie { get; set; }
+            public string pNazwisko { get; set; }
+            public string pNazwiskoPanienskie { get; set; }
+            public string pImieOjca { get; set; }
+            public string pImieMatki { get; set; }
+            public DateTime pDataUr { get; set; }
+            public string pPesel { get; set; }
+            public Uri pZdjecie { get; set; }
+            public string pPlec { get; set; }
+            public string pEtat { get; set; }
+            public string pStanowiskoOpis { get; set; }
+            public string pDataZatr { get; set; }
         }
 
         private void addUczen(object sender, RoutedEventArgs e)
@@ -1444,7 +1479,7 @@ namespace SekretariatPAD
 
         private void addDanePracownik(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
