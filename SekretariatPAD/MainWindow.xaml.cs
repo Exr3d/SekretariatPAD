@@ -209,28 +209,29 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
             string path;
             path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" +raportNUMBER + ".txt";
-            if (!File.Exists(path))
-            {
-
-                string text = "";
+            
+            string text = "";
                 for (int i = 0; i < dgUczen.Items.Count; i++)
                 {
+                    
                     Uczen uczenTest = dgUczen.Items[i] as Uczen;
                     text += (uczenTest.uImie + " " + uczenTest.uDrugieImie);
 
                     if (i < dgUczen.Items.Count - 1)
-                        text += ", ";
+                        text += "\n";
                 }
-                
-
-                string result = string.Join(";",dgUczen.Items[0].ToString());
-              
+            if (!File.Exists(path))
+            {
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
                     tw.WriteLine(text);
                 }
-                
+
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
             }
 
         }
