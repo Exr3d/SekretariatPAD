@@ -207,58 +207,58 @@
                             <StackPanel Orientation="Vertical" Width="200">
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu</TextBlock>
                                 <TextBox x:Name="searchnImie"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniu">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniu">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Drugim Imieniu</TextBlock>
                                 <TextBox x:Name="searchnDrugieImie"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoDrugimImieniu">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoDrugimImieniu">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Nazwisku</TextBlock>
                                 <TextBox x:Name="searchnNazwisko"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoNazwisku">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoNazwisku">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po nazwisku panieńskim</TextBlock>
                                 <TextBox x:Name="searchnNazwiskoPanienskie"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoNazwiskuPanienskim">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoNazwiskuPanienskim">Filtruj</Button>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" Width="200">
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu ojca</TextBlock>
                                 <TextBox x:Name="searchnImieOjca"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniuOjca">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuOjca">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Imieniu matki</TextBlock>
                                 <TextBox x:Name="searchnImieMatki"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoImieniuMatki">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoImieniuMatki">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po dacie urodzenia</TextBlock>
                                 <TextBox x:Name="searchnDataUr"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoDacieUr">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoDacieUr">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Peselu</TextBlock>
                                 <TextBox x:Name="searchnPesel"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoPeselu">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoPeselu">Filtruj</Button>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" Width="200">
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Płci</TextBlock>
                                 <TextBox x:Name="searchnPlec"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoPlci">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoPlci">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Wychowawstwie</TextBlock>
                                 <TextBox x:Name="searchnWychowawstwo"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoKlasie">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoWychowawstwie">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Przedmiotach</TextBlock>
                                 <TextBox x:Name="searchnPrzedmioty"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoGrupie">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoPrzedmiotach">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po Ilosci godzin</TextBlock>
                                 <TextBox x:Name="searchnIloscGodzin"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoGrupie">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoIlosciGodzin">Filtruj</Button>
 
                                 <TextBlock Margin="0,20,0,0">Wyszukaj po dacie zatr.</TextBlock>
                                 <TextBox x:Name="searchnDataZatr"></TextBox>
-                                <Button Margin="0,5,0,0" Click="searchUczenPoGrupie">Filtruj</Button>
+                                <Button Margin="0,5,0,0" Click="searchNauczycielPoDacieZatr">Filtruj</Button>
                             </StackPanel>
                         </StackPanel>
                         

@@ -272,7 +272,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia za pomoca slowa kluczowego:  " +tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia za pomoca slowa kluczowego:  " +tempNeeded + " \n"+ "Raport wykonany: "+ DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -312,7 +312,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie drugiego imienia za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie drugiego imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -351,7 +351,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -390,7 +390,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska panienskiego za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska panienskiego za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -429,7 +429,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia ojca za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia ojca za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -468,7 +468,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia matki za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia matki za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -509,7 +509,7 @@ namespace SekretariatPAD
                     File.Create(path).Dispose();
                     using (var tw = new StreamWriter(path))
                     {
-                        tw.WriteLine("Wyniki wyszukiwań na podstawie daty urodzenia za pomoca slowa kluczowego:  " + tempNeeded);
+                        tw.WriteLine("Wyniki wyszukiwań na podstawie daty urodzenia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                         tw.WriteLine(text);
                     }
                 }
@@ -557,7 +557,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie peselu za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie peselu za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -596,7 +596,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie plci za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie plci za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -635,7 +635,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie klasy za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie klasy za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -674,7 +674,7 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
-                    tw.WriteLine("Wyniki wyszukiwań na podstawie grupy za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie grupy za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
                     tw.WriteLine(text);
                 }
             }
@@ -766,6 +766,71 @@ namespace SekretariatPAD
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
                 nZdjecieTB.Text = openFileDialog.FileName;
+        }
+
+        private void searchNauczycielPoImieniu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoDrugimImieniu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoNazwisku(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoNazwiskuPanienskim(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoImieniuOjca(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoImieniuMatki(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoDacieUr(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoPeselu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoPlci(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoWychowawstwie(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoPrzedmiotach(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoIlosciGodzin(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchNauczycielPoDacieZatr(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
