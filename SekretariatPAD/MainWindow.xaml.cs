@@ -770,7 +770,42 @@ namespace SekretariatPAD
 
         private void searchNauczycielPoImieniu(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnImie.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoDrugimImieniu(object sender, RoutedEventArgs e)
