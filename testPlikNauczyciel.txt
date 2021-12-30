@@ -1,0 +1,26 @@
+Marcin
+Adam
+Rutkowski
+-
+Damian
+Laura
+02.11.1977
+12345678911
+mezczyzna
+brak
+matematyka, fizyka
+3pr 2godziny, 2bi 5godzin
+03.10.2013
+Jakub
+brak
+Małysz
+-
+Bogdan
+Bożena
+01.02.1968
+12345678955
+mezczyzna
+1a
+polski, historia
+1a 2godziny, 2b 4godziny, 3c 3godziny
+04.11.2012
