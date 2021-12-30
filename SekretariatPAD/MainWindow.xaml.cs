@@ -1551,5 +1551,65 @@ namespace SekretariatPAD
             if (openFileDialog.ShowDialog() == true)
                 pZdjecieTB.Text = openFileDialog.FileName;
         }
+
+        private void searchPracownikPoImieniu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoDrugimImieniu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoNazwisku(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoNazwiskuPanienskim(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoImieniuOjca(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoImieniuMatki(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoDacieUr(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoPeselu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoPlci(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoEtacie(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoOpisieStanowiska(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchPracownikPoDacieZatr(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
