@@ -810,62 +810,484 @@ namespace SekretariatPAD
 
         private void searchNauczycielPoDrugimImieniu(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnDrugieImie.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie drugiego imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoNazwisku(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnNazwisko.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoNazwiskuPanienskim(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnNazwiskoPanienskie.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska panienskiego za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoImieniuOjca(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnImieOjca.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia ojca za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoImieniuMatki(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnImieMatki.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia matki za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoDacieUr(object sender, RoutedEventArgs e)
         {
+            DateTime tempNeeded = DateTime.Parse(searchnDataUr.Text);
+            
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Equals(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie daty urodzenia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoPeselu(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnPesel.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie peselu za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoPlci(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnPlec.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie płci za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoWychowawstwie(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnWychowawstwo.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie wychowawstwa za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoPrzedmiotach(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnPrzedmioty.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie przedmiotów nauczynach za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoIlosciGodzin(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnIloscGodzin.Text.ToLower().ToString();
 
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Contains(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie ilosci godzin z dana klasa za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchNauczycielPoDacieZatr(object sender, RoutedEventArgs e)
         {
+            DateTime tempNeeded = DateTime.Parse(searchnDataZatr.Text);
 
+
+            var Zfiltrowane = nauczyciele.Where(x => x.nImie.ToLower().Equals(tempNeeded));
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            dgNauczyciel.ItemsSource = Zfiltrowane;
+            dgNauczyciel.Items.Refresh();
+
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Nauczyciel nauczycielTest = dgNauczyciel.Items[i] as Nauczyciel;
+
+                text += nauczycielTest.nImie + " " + nauczycielTest.nDrugieImie + " " + nauczycielTest.nNazwisko + " " + nauczycielTest.nNazwiskoPanienskie + " "
+                + nauczycielTest.nImieOjca + " " + nauczycielTest.nImieMatki + " " + nauczycielTest.nDataUr.Date + " " + nauczycielTest.nPesel + " " + nauczycielTest.nPlec
+                + " " + nauczycielTest.nWychowawstwo + " " + nauczycielTest.nPrzedmiotyNauczane + " " + nauczycielTest.nKlasaIloscGodzin + " " + nauczycielTest.nDataZatr.Date;
+
+                if (i < dgNauczyciel.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie daty zatrudnienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
     }
 }
