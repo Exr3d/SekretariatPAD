@@ -374,6 +374,9 @@
                             <TextBox></TextBox>
                             <TextBlock>Data zatrudnienia</TextBlock>
                             <DatePicker></DatePicker>
+
+                            <Button Click="addPracownik">Dodaj pracownika</Button>
+                            <Button Click="addDanePracownik" Margin="0,20,0,0">Dodaj dane z pliku TXT</Button>
                         </StackPanel>
 
                     </StackPanel>

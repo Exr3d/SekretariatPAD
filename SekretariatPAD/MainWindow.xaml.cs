@@ -1436,5 +1436,15 @@ namespace SekretariatPAD
                 }
             }
         }
+
+        private void addPracownik(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addDanePracownik(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
