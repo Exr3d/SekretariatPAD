@@ -216,7 +216,10 @@ namespace SekretariatPAD
                 {
                     
                     Uczen uczenTest = dgUczen.Items[i] as Uczen;
-                    text += (uczenTest.uImie + " " + uczenTest.uDrugieImie);
+                
+                    text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " " 
+                    + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec 
+                    + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
 
                     if (i < dgUczen.Items.Count - 1)
                         text += "\n";
@@ -245,6 +248,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie drugiego imienia za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoNazwisku(object sender, RoutedEventArgs e)
@@ -255,6 +287,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoNazwiskuPanienskim(object sender, RoutedEventArgs e)
@@ -265,6 +326,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska panienskiego za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoImieniuOjca(object sender, RoutedEventArgs e)
@@ -275,6 +365,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia ojca za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoImieniuMatki(object sender, RoutedEventArgs e)
@@ -285,6 +404,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia matki za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoDacieUr(object sender, RoutedEventArgs e)
@@ -297,11 +445,43 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+                string path;
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+                string text = "";
+                for (int i = 0; i < dgUczen.Items.Count; i++)
+                {
+
+                    Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                    text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                    + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                    + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                    if (i < dgUczen.Items.Count - 1)
+                        text += "\n";
+                }
+                if (!File.Exists(path))
+                {
+                    File.Create(path).Dispose();
+                    using (var tw = new StreamWriter(path))
+                    {
+                        tw.WriteLine("Wyniki wyszukiwań na podstawie daty urodzenia za pomoca slowa kluczowego:  " + tempNeeded);
+                        tw.WriteLine(text);
+                    }
+                }
+                else
+                {
+                    path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                }
             }
             else
             {
                 dgUczen.ItemsSource = uczniowie;
             }
+
+
+
             
         }
 
@@ -313,6 +493,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie peselu za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoPlci(object sender, RoutedEventArgs e)
@@ -323,6 +532,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie plci za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoKlasie(object sender, RoutedEventArgs e)
@@ -333,6 +571,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie klasy za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
 
         private void searchUczenPoGrupie(object sender, RoutedEventArgs e)
@@ -343,6 +610,35 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+            string path;
+            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            string text = "";
+            for (int i = 0; i < dgUczen.Items.Count; i++)
+            {
+
+                Uczen uczenTest = dgUczen.Items[i] as Uczen;
+
+                text += uczenTest.uImie + " " + uczenTest.uDrugieImie + " " + uczenTest.uNazwisko + " " + uczenTest.uNazwiskoPanienskie + " "
+                + uczenTest.uImieOjca + " " + uczenTest.uImieMatki + " " + uczenTest.uDataUr.Date + " " + uczenTest.uPesel + " " + uczenTest.uPlec
+                + " " + uczenTest.uKlasa + " " + uczenTest.uGrupa;
+
+                if (i < dgUczen.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie grupy za pomoca slowa kluczowego:  " + tempNeeded);
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+            }
         }
     }
 }
