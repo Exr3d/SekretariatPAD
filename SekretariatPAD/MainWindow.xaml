@@ -14,19 +14,19 @@
                 <MenuItem Header="_Nauczyciel" Click="goToNauczyciel"/>
                 <MenuItem Header="_Pracownik" Click="goToPracownik"/>
             </MenuItem>
-            <MenuItem Header="_Opcje">
-                <MenuItem Header="_Exit" Click="ExitClick"/>
-                <MenuItem Header="_Autor" Click="AuthorClick" />
-            </MenuItem>
+            
             <MenuItem Header="_Czyszczenie">
                 <MenuItem Header="Wyczysc uczen" Click="ShortcutMenuClickUczen"/>
                 <MenuItem Header="Wyczysc nauczyciel" Click="ShortcutMenuClickNauczyciel"/>
                 <MenuItem Header="Wyczysc pracownik" Click="ShortcutMenuClickPracownik"/>
             </MenuItem>
+            
+            <MenuItem Header="_Opcje">
+                <MenuItem Header="_Autor" Click="AuthorClick" />
+                <MenuItem Header="_Exit" Click="ExitClick"/>
+            </MenuItem>
         </Menu>
         <StackPanel Orientation="Vertical">
-
-
 
             <TabControl>
                 <TabItem Header="Uczen" Name="tabUczen">

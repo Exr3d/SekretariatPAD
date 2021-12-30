@@ -266,12 +266,16 @@ namespace SekretariatPAD
 
         private void ShortcutMenuClickNauczyciel(object sender, RoutedEventArgs e)
         {
-            dgNauczyciel.ItemsSource = null;
+            dgNauczyciel.ItemsSource = emptyNauczyciele;
+            nauczyciele.Clear();
+            dgNauczyciel.ItemsSource=nauczyciele;
         }
 
         private void ShortcutMenuClickPracownik(object sender, RoutedEventArgs e)
         {
-            dgPracownik.ItemsSource = null;
+            dgPracownik.ItemsSource = emptyPracownicy;
+            pracownicy.Clear();
+            dgPracownik.ItemsSource=pracownicy;
         }
 
         private void searchUczenPoImieniu(object sender, RoutedEventArgs e)
@@ -1602,57 +1606,530 @@ namespace SekretariatPAD
 
         private void searchPracownikPoDrugimImieniu(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpDrugieImie.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pDrugieImie.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie drugiego imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie drugiego imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoNazwisku(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpNazwisko.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pNazwisko.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoNazwiskuPanienskim(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpNazwiskoPanienskie.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pNazwiskoPanienskie.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska panienskiego za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska panienskiego za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoImieniuOjca(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpImieOjca.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pImieOjca.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia ojca za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia ojca za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoImieniuMatki(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpImieMatki.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pImieMatki.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia matki za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia matki za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoDacieUr(object sender, RoutedEventArgs e)
         {
+            DateTime tempNeeded = DateTime.Parse(searchpDataUr.Text);
 
+            var Zfiltrowane = pracownicy.Where(x => x.pDataUr.Equals(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie daty urodzenia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie daty urodzenia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoPeselu(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnPesel.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pPesel.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie peselu za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie peselu za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoPlci(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchnPlec.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pPlec.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie plci za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie plci za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoEtacie(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpEtat.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pEtat.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie etatu za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie etatu za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoOpisieStanowiska(object sender, RoutedEventArgs e)
         {
+            string tempNeeded = searchpStanowiskoOpis.Text.ToLower().ToString();
 
+            var Zfiltrowane = pracownicy.Where(x => x.pStanowiskoOpis.ToLower().Contains(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie opisu stanowiska za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie opisu stanowiska za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
 
         private void searchPracownikPoDacieZatr(object sender, RoutedEventArgs e)
         {
+            DateTime tempNeeded = DateTime.Parse(searchpDataZatr.Text);
 
+            var Zfiltrowane = pracownicy.Where(x => x.pDataZatr.Equals(tempNeeded));
+            dgPracownik.ItemsSource = emptyPracownicy;
+            dgPracownik.ItemsSource = Zfiltrowane;
+            dgPracownik.Items.Refresh();
+
+            string path;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
+
+
+
+            string text = "";
+            for (int i = 0; i < dgPracownik.Items.Count; i++)
+            {
+
+                Pracownik pracownikTest = dgPracownik.Items[i] as Pracownik;
+
+                text += pracownikTest.pImie + " " + pracownikTest.pDrugieImie + " " + pracownikTest.pNazwisko + " " + pracownikTest.pNazwiskoPanienskie + " "
+                + pracownikTest.pImieOjca + " " + pracownikTest.pImieMatki + " " + pracownikTest.pDataUr.Date + " " + pracownikTest.pPesel + " " + pracownikTest.pPlec
+                + " " + pracownikTest.pEtat + " " + pracownikTest.pStanowiskoOpis + " " + pracownikTest.pDataZatr.Date;
+
+                if (i < dgPracownik.Items.Count - 1)
+                    text += "\n";
+            }
+            if (!File.Exists(path))
+            {
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie daty zatrudnienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
+            else
+            {
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie daty zatrudnienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
+            }
         }
     }
 }
