@@ -24,11 +24,20 @@ namespace SekretariatPAD
     {
         List<Uczen> uczniowie = new List<Uczen>();
         List<Empty> empty = new List<Empty>();
+
+        List<Nauczyciel> nauczyciele = new List<Nauczyciel>();
+        List<EmptyNauczyciel> emptyNauczyciele = new List<EmptyNauczyciel>();
+
+        
+        
+
+
         int raportNUMBER = 1;
         public MainWindow()
         {
             InitializeComponent();
             dgUczen.ItemsSource = uczniowie;
+            dgNauczyciel.ItemsSource = nauczyciele;
         }
 
         private void goToUczen(object sender, RoutedEventArgs e)
@@ -64,6 +73,23 @@ namespace SekretariatPAD
             public string uKlasa { get; set; }
             public string uGrupa { get; set; }
         }
+        public class Nauczyciel
+        {
+            public string nImie { get; set; }
+            public string nDrugieImie { get; set; }
+            public string nNazwisko { get; set; }
+            public string nNazwiskoPanienskie { get; set; }
+            public string nImieOjca { get; set; }
+            public string nImieMatki { get; set; }
+            public DateTime nDataUr { get; set; }
+            public string nPesel { get; set; }
+            public Uri nZdjecie { get; set; }
+            public string nPlec { get; set; }
+            public string nWychowawstwo { get; set; }
+            public string nPrzedmiotyNauczane { get; set; }
+            public string nKlasaIloscGodzin { get; set; }
+            public DateTime nDataZatr { get; set; }
+        }
         public class Empty
         {
             public string uImie { get; set; }
@@ -78,6 +104,23 @@ namespace SekretariatPAD
             public string uPlec { get; set; }
             public string uKlasa { get; set; }
             public string uGrupa { get; set; }
+        }
+        public class EmptyNauczyciel
+        {
+            public string nImie { get; set; }
+            public string nDrugieImie { get; set; }
+            public string nNazwisko { get; set; }
+            public string nNazwiskoPanienskie { get; set; }
+            public string nImieOjca { get; set; }
+            public string nImieMatki { get; set; }
+            public DateTime nDataUr { get; set; }
+            public string nPesel { get; set; }
+            public Uri nZdjecie { get; set; }
+            public string nPlec { get; set; }
+            public string nWychowawstwo { get; set; }
+            public string nPrzedmiotyNauczane { get; set; }
+            public string nKlasaIloscGodzin { get; set; }
+            public DateTime nDataZatr { get; set; }
         }
 
         private void addUczen(object sender, RoutedEventArgs e)
@@ -644,6 +687,35 @@ namespace SekretariatPAD
         private void addDaneNauczyciel(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void addNauczyciel(object sender, RoutedEventArgs e)
+        {
+            nauczyciele.Add(new Nauczyciel()
+            {
+                nImie = nImieTB.Text,
+                nDrugieImie = nDrugieImieTB.Text,
+                nNazwisko = nNazwiskoTB.Text,
+                nNazwiskoPanienskie = nNazwiskoPanienskieTB.Text,
+                nImieOjca = nImieMatkiTB.Text,
+                nImieMatki = nImieOjcaTB.Text,
+                nDataUr = nDataUrTB.SelectedDate.Value.Date,
+                nPesel = nPeselTB.Text,
+                nZdjecie = new Uri(nZdjecieTB.Text),
+                nPlec = nPlecTB.Text,
+                nWychowawstwo = nWychowawstwoTB.Text,
+                nPrzedmiotyNauczane = nPrzedmiotyNauczaneTB.Text,
+                nKlasaIloscGodzin = nKlasyIloscGodzinTB.Text,
+                nDataZatr = nDataZatrTB.SelectedDate.Value.Date
+            });
+            dgNauczyciel.Items.Refresh();
+        }
+
+        private void addImageNauczyciel(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                nZdjecieTB.Text = openFileDialog.FileName;
         }
     }
 }
