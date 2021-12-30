@@ -202,9 +202,6 @@ namespace SekretariatPAD
                 {
                     while (sr.EndOfStream != true)
                     {
-
-
-
                         var x = 0;
                         string[] tablicaLini = new string[11];
                         while (x < 11)
@@ -243,7 +240,7 @@ namespace SekretariatPAD
 
         private void ExitClick(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Close Application?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            if (MessageBox.Show("Zamknac aplikacje?", "Pytanie", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
             {}
             else
             {
@@ -2130,6 +2127,16 @@ namespace SekretariatPAD
                     tw.WriteLine(text);
                 }
             }
+        }
+
+        private void ProgramWersja(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Wersja programu 1.0 Alfa");
+        }
+
+        private void PomocClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

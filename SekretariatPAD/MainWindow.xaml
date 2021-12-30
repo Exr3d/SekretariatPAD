@@ -17,14 +17,21 @@
             
             <MenuItem Header="_Czyszczenie">
                 <MenuItem Header="Wyczysc uczen" Click="ShortcutMenuClickUczen"/>
+                <Separator/>
                 <MenuItem Header="Wyczysc nauczyciel" Click="ShortcutMenuClickNauczyciel"/>
+                <Separator/>
                 <MenuItem Header="Wyczysc pracownik" Click="ShortcutMenuClickPracownik"/>
             </MenuItem>
             
             <MenuItem Header="_Opcje">
                 <MenuItem Header="_Autor" Click="AuthorClick" />
-                <MenuItem Header="_Exit" Click="ExitClick"/>
+                <Separator/>
+                <MenuItem Header="_Wersja" Click="ProgramWersja"/>
             </MenuItem>
+            <MenuItem Header="_Pomoc">
+                <MenuItem Header="_Pomoc" Click="PomocClick"/>
+            </MenuItem>
+            <MenuItem Header="_Zakończ" Click="ExitClick"/>
         </Menu>
         <StackPanel Orientation="Vertical">
 
