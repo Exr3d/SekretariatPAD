@@ -253,7 +253,7 @@ namespace SekretariatPAD
 
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" +raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
                 for (int i = 0; i < dgUczen.Items.Count; i++)
                 {
@@ -278,7 +278,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
 
         }
@@ -293,7 +299,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -318,7 +324,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie drugiego imienia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -332,7 +344,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -357,7 +369,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -371,7 +389,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -396,7 +414,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie nazwiska panienskiego za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -410,7 +434,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -435,7 +459,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia ojca za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -449,7 +479,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -474,7 +504,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia matki za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -490,7 +526,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
                 string path;
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
                 string text = "";
                 for (int i = 0; i < dgUczen.Items.Count; i++)
                 {
@@ -515,7 +551,13 @@ namespace SekretariatPAD
                 }
                 else
                 {
-                    path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                    path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                    File.Create(path).Dispose();
+                    using (var tw = new StreamWriter(path))
+                    {
+                        tw.WriteLine("Wyniki wyszukiwań na podstawie daty urodzenia za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                        tw.WriteLine(text);
+                    }
                 }
             }
             else
@@ -538,7 +580,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -563,7 +605,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie peselu za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -577,7 +625,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -602,7 +650,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie plci za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -616,7 +670,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -641,7 +695,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie klasy za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
@@ -655,7 +715,7 @@ namespace SekretariatPAD
             dgUczen.Items.Refresh();
 
             string path;
-            path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + raportNUMBER + ".txt";
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + raportNUMBER + ".txt";
             string text = "";
             for (int i = 0; i < dgUczen.Items.Count; i++)
             {
@@ -680,7 +740,13 @@ namespace SekretariatPAD
             }
             else
             {
-                path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\testRaport" + ++raportNUMBER + ".txt";
+                File.Create(path).Dispose();
+                using (var tw = new StreamWriter(path))
+                {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie grupy za pomoca slowa kluczowego:  " + tempNeeded + " \n" + "Raport wykonany: " + DateTime.Now.ToString());
+                    tw.WriteLine(text);
+                }
             }
         }
 
