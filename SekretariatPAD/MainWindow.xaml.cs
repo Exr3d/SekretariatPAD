@@ -207,9 +207,10 @@ namespace SekretariatPAD
             dgUczen.ItemsSource = empty;
             dgUczen.ItemsSource = Zfiltrowane;
             dgUczen.Items.Refresh();
+
+
             string path;
             path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" +raportNUMBER + ".txt";
-            
             string text = "";
                 for (int i = 0; i < dgUczen.Items.Count; i++)
                 {
@@ -225,9 +226,9 @@ namespace SekretariatPAD
                 File.Create(path).Dispose();
                 using (var tw = new StreamWriter(path))
                 {
+                    tw.WriteLine("Wyniki wyszukiwań na podstawie imienia za pomoca slowa kluczowego:  " +tempNeeded);
                     tw.WriteLine(text);
                 }
-
             }
             else
             {
