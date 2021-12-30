@@ -640,5 +640,10 @@ namespace SekretariatPAD
                 path = "C:\\Users\\Tymon\\OneDrive\\Pulpit\\testRaport" + ++raportNUMBER + ".txt";
             }
         }
+
+        private void addDaneNauczyciel(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
