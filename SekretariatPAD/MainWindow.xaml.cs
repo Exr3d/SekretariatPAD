@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
+using System.ComponentModel;
 
 namespace SekretariatPAD
 {
@@ -2131,12 +2133,14 @@ namespace SekretariatPAD
 
         private void ProgramWersja(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Wersja programu 1.0 Alfa");
+            MessageBox.Show("Aktualna wersja programu 1.0 Alpha");
         }
 
         private void PomocClick(object sender, RoutedEventArgs e)
         {
 
+            MessageBox.Show("Plik pomocy aktualnie niedostępny, będzie dostępny w wersji programu 1.1 Alpha");
+            ProgramWersja(sender, e);
         }
     }
 }
