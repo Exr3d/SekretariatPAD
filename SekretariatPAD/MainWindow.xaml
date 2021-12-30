@@ -403,34 +403,32 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="0,10,0,0">
                             <TextBlock>Imie</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pImieTB"></TextBox>
                             <TextBlock>Drugie imie</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pDrugieImieTB"></TextBox>
                             <TextBlock>Nazwisko</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pNazwiskoTB"></TextBox>
                             <TextBlock>Nazwisko panieńskie</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pNazwiskoPanienskieTB"></TextBox>
                             <TextBlock>Imie Ojca</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pImieOjcaTB"></TextBox>
                             <TextBlock>Imie Matki</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pImieMatkiTB"></TextBox>
                             <TextBlock>Data urodzenia</TextBlock>
-                            <DatePicker></DatePicker>
+                            <DatePicker x:Name="pDataUrTB"></DatePicker>
                             <TextBlock>Pesel</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pPeselTB"></TextBox>
                             <TextBlock>Zdjecie</TextBlock>
-                            <TextBox></TextBox>
-                            <Button>Dodaj zdjecie</Button>
+                            <TextBox x:Name="pZdjecieTB"></TextBox>
+                            <Button Click="AddImagePracownik" >Dodaj zdjecie</Button>
                             <TextBlock>Płeć</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pPlecTB"></TextBox>
                             <TextBlock>Etat</TextBlock>
-                            <TextBox></TextBox>
-                            <TextBlock>Przedmioty nauczane</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pEtatTB"></TextBox>
                             <TextBlock>Stanowisko opis</TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox x:Name="pStanowiskoOpisTB"></TextBox>
                             <TextBlock>Data zatrudnienia</TextBlock>
-                            <DatePicker></DatePicker>
+                            <DatePicker x:Name="pDataZatrTB"></DatePicker>
 
                             <Button Click="addPracownik">Dodaj pracownika</Button>
                             <Button Click="addDanePracownik" Margin="0,20,0,0">Dodaj dane z pliku TXT</Button>

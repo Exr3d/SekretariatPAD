@@ -31,16 +31,13 @@ namespace SekretariatPAD
         List<Pracownik> pracownicy = new List<Pracownik>();
         List<EmptyPracownik> emptyPracownicy = new List<EmptyPracownik>();
 
-        
-        
-
-
         int raportNUMBER = 1;
         public MainWindow()
         {
             InitializeComponent();
             dgUczen.ItemsSource = uczniowie;
             dgNauczyciel.ItemsSource = nauczyciele;
+            dgPracownik.ItemsSource = pracownicy;
         }
 
         private void goToUczen(object sender, RoutedEventArgs e)
@@ -139,7 +136,7 @@ namespace SekretariatPAD
             public string pPlec { get; set; }
             public string pEtat { get; set; }
             public string pStanowiskoOpis { get; set; }
-            public string pDataZatr { get; set; }
+            public DateTime pDataZatr { get; set; }
         }
         public class EmptyPracownik
         {
@@ -155,7 +152,7 @@ namespace SekretariatPAD
             public string pPlec { get; set; }
             public string pEtat { get; set; }
             public string pStanowiskoOpis { get; set; }
-            public string pDataZatr { get; set; }
+            public DateTime pDataZatr { get; set; }
         }
 
         private void addUczen(object sender, RoutedEventArgs e)
@@ -1474,12 +1471,50 @@ namespace SekretariatPAD
 
         private void addPracownik(object sender, RoutedEventArgs e)
         {
+            pracownicy.Add(new Pracownik()
+            {
+                pImie = pImieTB.Text,
+                pDrugieImie = pDrugieImieTB.Text,
+                pNazwisko = pNazwiskoTB.Text,
+                pNazwiskoPanienskie = pNazwiskoPanienskieTB.Text,
+                pImieOjca = pImieOjcaTB.Text,
+                pImieMatki = pImieMatkiTB.Text,
+                pDataUr = pDataUrTB.SelectedDate.Value.Date,
+                pPesel = pPeselTB.Text,
+                pZdjecie = new Uri(pZdjecieTB.Text),
+                pPlec = pPlecTB.Text,
+                pEtat = pEtatTB.Text,
+                pStanowiskoOpis = pStanowiskoOpisTB.Text,
+                pDataZatr = pDataZatrTB.SelectedDate.Value.Date
+            });
+            dgPracownik.Items.Refresh();
 
+            /*
+             * public string pImie { get; set; }
+            public string pDrugieImie { get; set; }
+            public string pNazwisko { get; set; }
+            public string pNazwiskoPanienskie { get; set; }
+            public string pImieOjca { get; set; }
+            public string pImieMatki { get; set; }
+            public DateTime pDataUr { get; set; }
+            public string pPesel { get; set; }
+            public Uri pZdjecie { get; set; }
+            public string pPlec { get; set; }
+            public string pEtat { get; set; }
+            public string pStanowiskoOpis { get; set; }
+            public string pDataZatr { get; set; }*/
         }
 
         private void addDanePracownik(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void AddImagePracownik(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                pZdjecieTB.Text = openFileDialog.FileName;
         }
     }
 }
