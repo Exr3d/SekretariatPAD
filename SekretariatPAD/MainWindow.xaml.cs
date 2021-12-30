@@ -1489,25 +1489,60 @@ namespace SekretariatPAD
             });
             dgPracownik.Items.Refresh();
 
-            /*
-             * public string pImie { get; set; }
-            public string pDrugieImie { get; set; }
-            public string pNazwisko { get; set; }
-            public string pNazwiskoPanienskie { get; set; }
-            public string pImieOjca { get; set; }
-            public string pImieMatki { get; set; }
-            public DateTime pDataUr { get; set; }
-            public string pPesel { get; set; }
-            public Uri pZdjecie { get; set; }
-            public string pPlec { get; set; }
-            public string pEtat { get; set; }
-            public string pStanowiskoOpis { get; set; }
-            public string pDataZatr { get; set; }*/
         }
 
         private void addDanePracownik(object sender, RoutedEventArgs e)
         {
-            
+            int lineCount = 0;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                StreamReader sr = new StreamReader(openFileDialog.FileName.ToString());
+                StreamReader srLineCount = new StreamReader(openFileDialog.FileName.ToString());
+                while (srLineCount.ReadLine() != null)
+                {
+                    lineCount++;
+                }
+
+                if (lineCount % 12 == 0)
+                {
+                    while (sr.EndOfStream != true)
+                    {
+
+
+
+                        var x = 0;
+                        string[] tablicaLini = new string[12];
+                        while (x < 12)
+                        {
+                            string linia = sr.ReadLine().ToString();
+                            tablicaLini[x] = linia;
+                            x++;
+                        }
+                        pracownicy.Add(new Pracownik()
+                        {
+                            pImie = tablicaLini[0],
+                            pDrugieImie = tablicaLini[1],
+                            pNazwisko = tablicaLini[2],
+                            pNazwiskoPanienskie = tablicaLini[3],
+                            pImieOjca = tablicaLini[4],
+                            pImieMatki = tablicaLini[5],
+                            pDataUr = DateTime.Parse(tablicaLini[6]),
+                            pPesel = tablicaLini[7],
+                            pPlec = tablicaLini[8],
+                            pEtat = tablicaLini[9],
+                            pStanowiskoOpis = tablicaLini[10],
+                            pDataZatr = DateTime.Parse(tablicaLini[11])
+                        });
+                        dgPracownik.Items.Refresh();
+                    }
+                    dgPracownik.Items.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Sprawdź poprawność dodawanego pliku");
+                }
+            }
         }
 
         private void AddImagePracownik(object sender, RoutedEventArgs e)
