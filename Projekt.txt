@@ -1,1 +1,61 @@
-
+GUI:
+  +Menu: 
+    - przycisk Dane (Przelaczanie sie pomiedzy zakladkami Uczen, Nauczyciel i Pracownik)
+    - przycisk Czyszczenie (Czyszczenie poszczegolnych zakladek)
+    - przycisk Opcje (Mozliwosc zobaczenia wersji programu / autora
+    - przycisk Pomoc (Mozliwosc odpalenia opcji)
+    - przycisk Zakoncz (Wylaczenie programu)
+    
+  +Zakladki:
+    * Uczen:
+      -Tabelka z danymi ucznia (Imie, drugie imie, nazwisko, nazwisko panienskie, imie ojca, imie matki, data urodzenia, pesel, zdjecie
+      , plec, klasa, grupa)
+      - Panele do wprowadzenia wszystkich danych z użyciem przycisku dodania pojedynczych 
+      - Przycisk do dodania danych ladowanych z pliku txt
+      - Panele z przyciskami do filtrowania zawartosci tabeli po kazdej z danych z tabeli
+      
+    * Nauczyciel:
+      -Tabelka z danymi ucznia (Imie, drugie imie, nazwisko, nazwisko panienskie, imie ojca, imie matki, data urodzenia, pesel, zdjecie
+      , plec, wychowawstwo, przedmioty nauczane, ilosc godzin z dana klasa, data zatrudnienia)
+      - Panele do wprowadzenia wszystkich danych z użyciem przycisku dodania pojedynczych 
+      - Przycisk do dodania danych ladowanych z pliku txt
+      - Panele z przyciskami do filtrowania zawartosci tabeli po kazdej z danych z tabeli
+      
+    * Pracownik:
+      -Tabelka z danymi ucznia (Imie, drugie imie, nazwisko, nazwisko panienskie, imie ojca, imie matki, data urodzenia, pesel, zdjecie
+      , plec, etat, opis stanowiska, data zatrudnienia)
+      - Panele do wprowadzenia wszystkich danych z użyciem przycisku dodania pojedynczych 
+      - Przycisk do dodania danych ladowanych z pliku txt
+      - Panele z przyciskami do filtrowania zawartosci tabeli po kazdej z danych z tabeli
+      
+      
+Funkcjonalnosc:
+  +Przyciski:
+    * W każdej z poszczegolnych zakladek przycisk do filtrowania danych za pomoca slowa kluczowego pobieranego z odpowiedniego panelu
+      tekstowego, przy kliknieciu tworzy sie rowniez raport z wyszukanymi danymi, data, slowem kluczowym i kategoria
+      
+    *  W każdej z poszczegolnych zakladek przycisk do dodania pojedynczego ucznia/pracownika/nauczyciela za pomoca danych pobranych z 
+       paneli z poszczegolnymi danymi (przycisk do dodania zdjecia otwiera okno dialogowe aby wybrac zdjecie i zapisac jego sciezke w 
+       panelu, jako dane) !dane nie moga byc puste!
+       
+    *  W każdej z poszczegolnych zakladek przycisk do dodania danych z pliku txt wybieranego poprzez okno dialogowe, dane odpowiednio
+       sprawdzane
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
